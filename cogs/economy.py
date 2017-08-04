@@ -70,31 +70,31 @@ class SMReel(Enum):
     snowflake = "\N{SNOWFLAKE}"
 
 PAYOUTS = {
-    (SMReel.two, SMReel.two, SMReel.six) : {
+    (SMReel.two, SMReel.two, SMReel.six) : { # 1/1000
         "payout" : lambda x: x * 2500 + x,
         "phrase" : "JACKPOT! 226! Your bid has been multiplied * 2500!"
     },
-    (SMReel.flc, SMReel.flc, SMReel.flc) : {
+    (SMReel.flc, SMReel.flc, SMReel.flc) : { # 1/1000
         "payout" : lambda x: x + 1000,
         "phrase" : "4LC! +1000!"
     },
-    (SMReel.cherries, SMReel.cherries, SMReel.cherries) : {
+    (SMReel.cherries, SMReel.cherries, SMReel.cherries) : { # 1/1000
         "payout" : lambda x: x + 800,
         "phrase" : "Three cherries! +800!"
     },
-    (SMReel.two, SMReel.six) : {
+    (SMReel.two, SMReel.six) : { #1/50
         "payout" : lambda x: x * 4 + x,
         "phrase" : "2 6! Your bid has been multiplied * 4!"
     },
-    (SMReel.cherries, SMReel.cherries) : {
+    (SMReel.cherries, SMReel.cherries) : { #1/50 - 1/1000
         "payout" : lambda x: x * 3 + x,
         "phrase" : "Two cherries! Your bid has been multiplied * 3!"
     },
-    "3 symbols" : {
+    "3 symbols" : { #1/100  - 2/1000
         "payout" : lambda x: x + 500,
         "phrase" : "Three symbols! +500!"
     },
-    "2 symbols" : {
+    "2 symbols" : { # 1/5 - 1/100 - 1/50 - 1/1000
         "payout" : lambda x: x * 2 + x,
         "phrase" : "Two consecutive symbols! Your bid has been multiplied * 2!"
     },
